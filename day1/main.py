@@ -14,8 +14,9 @@ NUMBERS_AS_STRINGS = {
     "six": 6,
     "seven": 7,
     "eight": 8,
-    "nine": 9
+    "nine": 9,
 }
+
 
 def get_first_number(line: str, strings_as_numbers: bool) -> int:
     characters = ""
@@ -28,6 +29,7 @@ def get_first_number(line: str, strings_as_numbers: bool) -> int:
                 if number_as_string in characters:
                     return number
 
+
 def get_last_number(line: str, strings_as_numbers: bool) -> int:
     characters = ""
     for character in reversed(line):
@@ -39,11 +41,13 @@ def get_last_number(line: str, strings_as_numbers: bool) -> int:
                 if number_as_string in characters:
                     return number
 
+
 def get_line_value(line: str, strings_as_numbers: bool):
     first = get_first_number(line, strings_as_numbers)
     last = get_last_number(line, strings_as_numbers)
     print(f"First number: {first}\nLast number: {last}")
     return int(f"{first}{last}")
+
 
 for line in input_text.splitlines():
     print()
@@ -57,5 +61,3 @@ for line in input_text.splitlines():
     print(f"Line: {line}")
     part_two_total += get_line_value(line, True)
 print(f"\nPart two total: {part_two_total}")
-    
-    
